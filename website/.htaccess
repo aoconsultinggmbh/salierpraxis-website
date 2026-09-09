@@ -1,0 +1,260 @@
+# ===========================================================================
+# .htaccess — Salierpraxis (statisches HTML-Paket, Apache 2.4)
+#
+# Inhalt in dieser Reihenfolge:
+#   1. HTTPS erzwingen
+#   2. Domain-/www-Vereinheitlichung          (AUSKOMMENTIERT — siehe Hinweis)
+#   3. 301-Weiterleitungen der alten Joomla-/PHP-URLs
+#   4. Fehlerseite (404)
+#   5. Komprimierung (Gzip/Deflate)
+#   6. Browser-Caching für Bilder, CSS und JS
+#   7. Sicherheits- und Standard-Header
+#   8. Verzeichnis-Einstellungen
+#
+# WICHTIG: Nach dem Hochladen bitte alle Punkte einmal im Browser prüfen —
+# ein falscher Redirect kann die komplette Seite unerreichbar machen. Bei
+# Unsicherheit die betreffende Zeile mit "#" auskommentiert lassen.
+# ===========================================================================
+
+
+# ---------------------------------------------------------------------------
+# 1. HTTPS erzwingen
+#
+# Leitet jeden http-Aufruf dauerhaft auf https um. Voraussetzung: Für die
+# Domain ist ein gültiges SSL-Zertifikat installiert (bei den meisten
+# Hostern per Let's Encrypt kostenlos). Ohne Zertifikat diesen Block
+# auskommentiert lassen, sonst ist die Seite nicht erreichbar.
+#
+# Die zweite Bedingung greift bei Hostern, die SSL vor dem Webserver
+# terminieren (Proxy/Loadbalancer) und den Status per Header weitergeben.
+# ---------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+</IfModule>
+
+
+# ---------------------------------------------------------------------------
+# 2. Domain-/www-Vereinheitlichung
+#
+# ===== ERST NACH DER DOMAIN-ENTSCHEIDUNG AKTIVIEREN =====
+#
+# Ausgangslage: salierpraxis.de und salierpraxis-duesseldorf.de führen bisher
+# teils unterschiedliche Inhalte. Empfehlung: salierpraxis.de als einzige
+# Hauptdomain festlegen (standortübergreifend) und die zweite Domain
+# vollständig per 301 weiterleiten. Die Canonical-Tags und die sitemap.xml
+# dieses Pakets zeigen bereits auf  https://www.salierpraxis.de  (mit www).
+#
+# Vor dem Aktivieren sicherstellen, dass
+#   a) beide Domains auf diesen Webspace zeigen,
+#   b) für die Zieldomain ein SSL-Zertifikat inklusive www-Variante vorliegt.
+#
+# Danach die folgenden beiden Blöcke einkommentieren (Raute entfernen).
+# ---------------------------------------------------------------------------
+#<IfModule mod_rewrite.c>
+#  RewriteEngine On
+#
+#  # 2a) Alte Zweitdomain komplett auf die Hauptdomain umleiten
+#  RewriteCond %{HTTP_HOST} ^(www\.)?salierpraxis-duesseldorf\.de$ [NC]
+#  RewriteRule ^(.*)$ https://www.salierpraxis.de/$1 [R=301,L]
+#
+#  # 2b) Aufrufe ohne www auf die www-Variante umleiten (eine kanonische Form)
+#  RewriteCond %{HTTP_HOST} ^salierpraxis\.de$ [NC]
+#  RewriteRule ^(.*)$ https://www.salierpraxis.de/$1 [R=301,L]
+#</IfModule>
+
+
+# ---------------------------------------------------------------------------
+# 3. 301-Weiterleitungen der alten URLs
+#
+# Die alte Website lieferte .php-Adressen. Damit Verlinkungen von außen und
+# die in Suchmaschinen gespeicherten Adressen weiterhin funktionieren (und die
+# aufgebaute Sichtbarkeit erhalten bleibt), wird jede alte Adresse dauerhaft
+# (301) auf ihr neues Gegenstück geleitet.
+#
+# Reihenfolge beachten: Apache nimmt die ERSTE passende Regel. Die
+# Sammelregeln am Ende greifen daher nur, wenn oben nichts gepasst hat.
+#
+# [PRÜFEN] Die Liste basiert auf den bekannten alten Adressen. Vor bzw. kurz
+# nach dem Livegang die tatsächlich aufgerufenen alten URLs in der Google
+# Search Console ("Seiten" → "Nicht gefunden (404)") und in den Server-Logs
+# gegenprüfen und hier ergänzen.
+# ---------------------------------------------------------------------------
+
+# --- Leistungsseiten --------------------------------------------------------
+# Achtung: Die alte URL der Parodontitis-Seite enthielt einen Tippfehler
+# ("paradontitis"). Beide Schreibweisen werden abgedeckt.
+Redirect 301 /leistungen_paradontitis.php   /leistungen/parodontitis.html
+Redirect 301 /leistungen_parodontitis.php   /leistungen/parodontitis.html
+
+Redirect 301 /leistungen_prophylaxe.php            /leistungen/prophylaxe.html
+Redirect 301 /leistungen_implantologie.php         /leistungen/implantologie.html
+Redirect 301 /leistungen_zahnersatz.php            /leistungen/zahnersatz.html
+Redirect 301 /leistungen_fuellungen.php            /leistungen/fuellungen.html
+Redirect 301 /leistungen_endodontie.php            /leistungen/endodontie.html
+Redirect 301 /leistungen_veneers.php               /leistungen/veneers.html
+Redirect 301 /leistungen_bleaching.php             /leistungen/bleaching.html
+Redirect 301 /leistungen_lachgassedierung.php      /leistungen/lachgassedierung.html
+Redirect 301 /leistungen_vollnarkose.php           /leistungen/vollnarkose.html
+Redirect 301 /leistungen_pinhole.php               /leistungen/pinhole.html
+Redirect 301 /leistungen_kiefergelenkstherapie.php /leistungen/kiefergelenkstherapie.html
+
+# Häufige Kurz- und Alternativschreibweisen der alten Seiten
+Redirect 301 /leistungen_lachgas.php        /leistungen/lachgassedierung.html
+Redirect 301 /leistungen_kiefergelenk.php   /leistungen/kiefergelenkstherapie.html
+Redirect 301 /leistungen_wurzelbehandlung.php /leistungen/endodontie.html
+Redirect 301 /leistungen_zahnreinigung.php  /leistungen/prophylaxe.html
+
+# --- Nicht mehr angebotene Behandlungen ------------------------------------
+# Diese Seiten haben keine Entsprechung mehr. Sie gehen bewusst auf die
+# Leistungsübersicht (thematisch nächstliegende Seite), nicht auf die
+# Startseite — das ist für Besucher und Suchmaschinen nachvollziehbarer.
+Redirect 301 /leistungen_inman.php  /leistungen.html
+<IfModule mod_alias.c>
+  RedirectMatch 301 (?i)^/.*(inman|beautiful[-_]?smile).*$  /leistungen.html
+</IfModule>
+
+# --- Übrige Seiten ----------------------------------------------------------
+Redirect 301 /duesseldorf.php  /duesseldorf.html
+Redirect 301 /kempen.php       /kempen.html
+Redirect 301 /kontakt.php      /kontakt.html
+Redirect 301 /notdienst.php    /notdienst.html
+Redirect 301 /impressum.php    /impressum.html
+Redirect 301 /datenschutz.php  /datenschutz.html
+Redirect 301 /leistungen.php   /leistungen.html
+Redirect 301 /index.php        /
+Redirect 301 /home.php         /
+Redirect 301 /startseite.php   /
+
+# --- Sammelregel für alle übrigen alten Leistungs-URLs ---------------------
+# Fängt Adressen wie /leistungen_<irgendwas>.php ab, die oben nicht einzeln
+# genannt sind, und leitet sie auf die Leistungsübersicht.
+<IfModule mod_alias.c>
+  RedirectMatch 301 ^/leistungen_[a-z0-9_-]+\.php$  /leistungen.html
+</IfModule>
+
+# --- Joomla-Altlasten ------------------------------------------------------
+# Typische Joomla-Adressen mit Parametern (index.php?option=...) lassen sich
+# per Redirect nicht sauber abbilden; sie landen auf der Startseite.
+# Bei Bedarf nach Auswertung der Search Console gezielt ergänzen.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{QUERY_STRING} (^|&)option=com_ [NC]
+  RewriteRule ^index\.php$ / [R=301,L]
+</IfModule>
+
+
+# ---------------------------------------------------------------------------
+# 4. Fehlerseite
+# ---------------------------------------------------------------------------
+ErrorDocument 404 /404.html
+
+
+# ---------------------------------------------------------------------------
+# 5. Komprimierung (Gzip/Deflate)
+#
+# Textdateien werden komprimiert ausgeliefert — spürbar schnellere Ladezeit,
+# was auch in die Bewertung durch Suchmaschinen einfließt. Bilder (JPG) sind
+# bereits komprimiert und werden ausgenommen.
+# ---------------------------------------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+  AddOutputFilterByType DEFLATE text/javascript application/javascript
+  AddOutputFilterByType DEFLATE application/json application/ld+json
+  AddOutputFilterByType DEFLATE application/xml application/rss+xml
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+
+# ---------------------------------------------------------------------------
+# 6. Browser-Caching
+#
+# Bilder, CSS und JavaScript werden im Browser zwischengespeichert; HTML nur
+# kurz, damit inhaltliche Änderungen zeitnah ankommen.
+#
+# Hinweis für spätere Änderungen: Wird eine CSS- oder JS-Datei ersetzt, ohne
+# den Dateinamen zu ändern, sehen wiederkehrende Besucher unter Umständen für
+# die Cache-Dauer noch die alte Version. Dann entweder den Dateinamen
+# anpassen (z. B. style.v2.css) oder die Laufzeit hier vorübergehend senken.
+# ---------------------------------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault                        "access plus 1 week"
+
+  ExpiresByType image/jpeg              "access plus 1 year"
+  ExpiresByType image/png               "access plus 1 year"
+  ExpiresByType image/gif               "access plus 1 year"
+  ExpiresByType image/webp              "access plus 1 year"
+  ExpiresByType image/svg+xml           "access plus 1 year"
+  ExpiresByType image/x-icon            "access plus 1 year"
+
+  ExpiresByType text/css                "access plus 1 month"
+  ExpiresByType text/javascript         "access plus 1 month"
+  ExpiresByType application/javascript  "access plus 1 month"
+
+  ExpiresByType text/html               "access plus 1 hour"
+  ExpiresByType application/ld+json     "access plus 1 hour"
+  ExpiresByType text/plain              "access plus 1 day"
+  ExpiresByType application/xml         "access plus 1 day"
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Bilder, Schriften, CSS und JS: lange gültig
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico|woff2?)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  # HTML und Textdateien: kurz gültig
+  <FilesMatch "\.(html|txt|xml|json)$">
+    Header set Cache-Control "public, max-age=3600, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+
+# ---------------------------------------------------------------------------
+# 7. Sicherheits- und Standard-Header
+# ---------------------------------------------------------------------------
+<IfModule mod_headers.c>
+  # Verhindert, dass Browser den Dateityp abweichend vom Content-Type raten
+  Header set X-Content-Type-Options "nosniff"
+
+  # Einbetten der Seite in fremde Frames verhindern (Clickjacking-Schutz)
+  Header set X-Frame-Options "SAMEORIGIN"
+
+  # Sparsame Referrer-Weitergabe an externe Ziele
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Keine Berechtigungen anfordern, die diese Seite nicht benötigt
+  Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+
+  # HSTS — erst aktivieren, wenn HTTPS dauerhaft und fehlerfrei läuft:
+  # Ein Browser, der diesen Header einmal gesehen hat, ruft die Domain für
+  # die angegebene Dauer ausschließlich per HTTPS auf.
+  # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
+# Zeichensatz und Content-Type für die Textdateien im Wurzelverzeichnis
+AddDefaultCharset UTF-8
+<Files "llms.txt">
+  ForceType text/plain
+</Files>
+
+
+# ---------------------------------------------------------------------------
+# 8. Verzeichnis-Einstellungen
+# ---------------------------------------------------------------------------
+# Verzeichnislisten abschalten (niemand soll /bilder/ durchblättern können)
+Options -Indexes
+
+# Startdatei
+DirectoryIndex index.html
+
+# Zugriff auf diese Datei selbst sperren
+<Files ".htaccess">
+  Require all denied
+</Files>

@@ -1,0 +1,63 @@
+# robots.txt — Salierpraxis, Zahnärzte Düsseldorf-Oberkassel & Kempen
+# ---------------------------------------------------------------------------
+# Grundregel: Die gesamte Website darf von Suchmaschinen gelesen werden.
+# ---------------------------------------------------------------------------
+
+User-agent: *
+Allow: /
+
+# ---------------------------------------------------------------------------
+# KI-Crawler (Generative Engine Optimization)
+#
+# Die folgenden Bots sammeln Inhalte für KI-Antwortsysteme (ChatGPT, Perplexity,
+# Claude, Google AI-Antworten). Sie sind hier BEWUSST ERLAUBT: Nur was diese
+# Systeme lesen dürfen, können sie in ihren Antworten auch korrekt über die
+# Salierpraxis wiedergeben — Adressen, Öffnungszeiten, Leistungen.
+#
+# Soll ein Anbieter später ausgeschlossen werden, genügt es, bei dem
+# betreffenden Block "Allow: /" durch "Disallow: /" zu ersetzen.
+# Nachteil eines Ausschlusses: Die Praxis erscheint in den Antworten dieses
+# Systems dann gar nicht oder nur mit veralteten Fremdangaben.
+# ---------------------------------------------------------------------------
+
+# OpenAI — Training/Index für ChatGPT
+User-agent: GPTBot
+Allow: /
+
+# OpenAI — Abruf beim Beantworten einer konkreten Nutzerfrage
+User-agent: ChatGPT-User
+Allow: /
+
+# OpenAI — Suchindex von ChatGPT
+User-agent: OAI-SearchBot
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Anthropic (Claude)
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Google — Steuert die Nutzung in Gemini und den KI-Antworten der Suche
+User-agent: Google-Extended
+Allow: /
+
+# Common Crawl — offener Datensatz, aus dem viele Sprachmodelle lernen
+User-agent: CCBot
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot-Extended
+Allow: /
+
+# ---------------------------------------------------------------------------
+# Sitemap und maschinenlesbare Kurzfassung
+# ---------------------------------------------------------------------------
+Sitemap: https://www.salierpraxis.de/sitemap.xml
+
+# Kompakte Faktenübersicht für KI-Systeme: https://www.salierpraxis.de/llms.txt
