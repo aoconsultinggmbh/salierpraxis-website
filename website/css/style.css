@@ -39,7 +39,7 @@ header .wrap { display: flex; align-items: center; justify-content: space-betwee
 .nav .btn { margin-left: 6px; }
 .nav .nav-btn { display: none; }
 
-.btn { display: inline-block; padding: 13px 30px; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; cursor: pointer; }
+.btn { display: inline-block; padding: 13px 30px; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; cursor: pointer; white-space: nowrap; }
 .btn-solid { background: #4a7fa5; color: #fff; }
 .btn-solid:hover { background: #3d6b8c; }
 .btn-line { border: 1px solid #4a7fa5; color: #4a7fa5; background: transparent; }
@@ -142,6 +142,36 @@ section { padding: 75px 0; }
 .bkarte .folgt {
   display: inline-block; margin-top: 12px; font-size: 12px; color: #55707f;
   background: #eef3f6; border: 1px solid #dde4e8; padding: 3px 9px;
+}
+
+/* ---------- Tiefe: sanfter Schatten fuer alle Kaesten ----------
+   Zwei Lagen: eine feine Kante direkt am Rand, eine weiche Wolke darunter.
+   Bewusst zurueckhaltend - die Seite soll ruhig bleiben, nur nicht flach. */
+.cards-grid .item,
+.bkarte,
+.orte .card,
+.fakten .fkarte,
+.info-cards .icard,
+.notfall-cards .ncard,
+.steps .step,
+.side .box {
+  box-shadow: 0 1px 2px rgba(36, 52, 63, .04), 0 14px 28px -20px rgba(36, 52, 63, .30);
+}
+
+/* Die Leistungs-Kacheln teilen sich Trennlinien - dort wirkt ein Schatten je
+   Kachel unruhig. Stattdessen liegt der Schatten auf dem ganzen Raster. */
+.teaser-grid {
+  box-shadow: 0 1px 2px rgba(36, 52, 63, .04), 0 18px 34px -24px rgba(36, 52, 63, .32);
+  background: #fff;
+}
+
+/* Karten, die anklickbar sind, heben sich beim Darauffahren leicht an. */
+.cards-grid .item, .orte .card, .bkarte {
+  transition: box-shadow .2s ease, transform .2s ease;
+}
+.cards-grid .item:hover, .orte .card:hover {
+  box-shadow: 0 2px 4px rgba(36, 52, 63, .05), 0 20px 38px -22px rgba(36, 52, 63, .38);
+  transform: translateY(-2px);
 }
 
 /* ---------- Standorte (Karten) ---------- */
@@ -267,6 +297,21 @@ footer a:hover { color: #4a7fa5; }
 /* ============================================================
    Responsiv
    ============================================================ */
+
+/* Zwischen Handy und grossem Bildschirm wurde der Kopf zu breit und die
+   ganze Seite liess sich seitlich verschieben. Hier wird er enger gesetzt. */
+@media (max-width: 1180px) {
+  header .wrap { gap: 16px; }
+  .nav { gap: 18px; font-size: 13px; letter-spacing: 1px; }
+  header .btn { padding: 10px 16px; font-size: 12px; letter-spacing: 1px; }
+  .logo .main { font-size: 26px; }
+}
+@media (max-width: 1000px) {
+  /* Der Knopf im Kopf passt nicht mehr daneben. Der Menuepunkt Kontakt
+     bleibt, ab 768 px uebernimmt das Klappmenue mit eigenem Knopf. */
+  .header-cta { display: none; }
+  .nav { gap: 16px; }
+}
 
 @media (max-width: 1024px) {
   h1, .hero h1 { font-size: 34px; }
