@@ -534,3 +534,33 @@ Geprüft: 21 Seiten, 93 Schema-Knoten (alle valides JSON), alle internen Links u
 Bildpfade, je genau ein `<h1>`/Canonical/Title/Description, Titel 30–57 und
 Descriptions 152–160 Zeichen, kein horizontaler Überlauf. Änderungen sind im
 Generator hinterlegt und werden mit `python3 build_leistungen.py` reproduziert.
+
+---
+
+## Barrierefreiheit und Jameda (17.09.2026)
+
+**Barrierefreiheits-Widget** aus `puchmayr-website` übernommen (`css/barrierefreiheit.css`,
+`js/barrierefreiheit.js`), auf allen 22 Seiten eingebunden. Es baut seine Oberfläche selbst,
+verändert das übrige HTML nicht und speichert die Einstellungen nur im Browser des Besuchers —
+keine Datenübertragung, kein Cookie-Banner nötig. Die Farben zieht es über die Variablen
+`--navy`, `--navy-ink` und `--coral`; die sind jetzt oben in `css/style.css` auf die
+Salier-Farben gesetzt (#24343f / #18252d / #4a7fa5).
+
+Zusätzlich auf allen Seiten: **Sprunglink** „Zum Inhalt springen" direkt nach `<body>` und ein
+Ziel `<span id="inhalt">` hinter dem Header.
+
+**Neue Seite `barrierefreiheit.html`** (Erklärung zur Barrierefreiheit), verlinkt in der
+Fußzeile aller Seiten und in der Sitemap. Sie ist eine **Selbsteinschätzung**, kein Prüfbericht —
+das steht auch so drin. Im Quelltext der Seite stehen drei Punkte, die vor dem Livegang mit der
+Praxis geklärt werden müssen (Zugang zu den Räumen, Ansprechpartner für Hinweise, künftige PDFs).
+
+**Jameda:** Auf der alten Seite hing das offizielle Jameda-Siegel-Widget
+(`cdn1.jameda-elements.de/widgets/siegel/81303556_1/...`), zweimal eingebunden. Es lädt bei jedem
+Seitenaufruf von Jameda-Servern (IP-Übertragung, datenschutzpflichtig) und zeigte am 17.09.2026
+gar kein Siegel, nur einen Textlink. **Auf der neuen Seite deshalb bewusst kein Widget**, sondern
+ein einfacher Link auf der Behandlerkarte von Dr. Alexander Ilbag:
+`https://www.jameda.de/kempen/zahnaerzte/parodontologen/dr-alexander-ilbag/uebersicht/81303556_1/`
+Kein externes Laden, kein Datenschutz-Absatz nötig. Entscheidung Admir, 17.09.2026.
+
+**Offen:** Haben Dr. Patrick Ilbag und Oliver Brux ebenfalls Jameda-Profile? Dann dort genauso
+verlinken. Und: sollen zusätzlich die Google-Bewertungen der beiden Standorte gezeigt werden?

@@ -3,6 +3,28 @@
    Gemeinsames Stylesheet (Design-Variante „Behutsames Update")
    ============================================================ */
 
+/* Farben fuer das Barrierefreiheits-Widget (uebernimmt sie ueber diese Namen) */
+:root {
+  --navy: #24343f;
+  --navy-ink: #18252d;
+  --coral: #4a7fa5;
+}
+
+/* Sprunglink fuer Tastatur und Screenreader */
+.sprunglink {
+  position: absolute; left: -9999px; top: 0; z-index: 2147482000;
+  background: #24343f; color: #fff; padding: 12px 18px;
+  border-radius: 0 0 8px 0; font-size: 15px;
+}
+.sprunglink:focus { left: 0; }
+
+/* Bewertungslink auf einer Behandlerkarte */
+.bkarte .bewertung {
+  display: inline-block; margin-top: 8px; font-size: 13px; color: #4a7fa5;
+  border-bottom: 1px solid rgba(74,127,165,.45); padding-bottom: 1px;
+}
+.bkarte .bewertung:hover { color: #24343f; border-bottom-color: #24343f; }
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
