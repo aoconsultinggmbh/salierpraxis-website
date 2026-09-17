@@ -141,7 +141,11 @@ section { padding: 75px 0; }
 .team .wrap.behandler {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;
   margin-top: 46px;
+  /* stretch statt center: alle Karten einer Reihe gleich hoch, auch wenn
+     eine davon eine Zeile mehr Text hat. */
+  align-items: stretch;
 }
+.bkarte { display: flex; flex-direction: column; }
 .bkarte { background: #fff; border: 1px solid #dde4e8; }
 .bkarte picture, .bkarte img, .bkarte .kein-foto {
   display: block; width: 100%;

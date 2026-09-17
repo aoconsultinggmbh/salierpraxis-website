@@ -549,10 +549,14 @@ Salier-Farben gesetzt (#24343f / #18252d / #4a7fa5).
 Zusätzlich auf allen Seiten: **Sprunglink** „Zum Inhalt springen" direkt nach `<body>` und ein
 Ziel `<span id="inhalt">` hinter dem Header.
 
-**Neue Seite `barrierefreiheit.html`** (Erklärung zur Barrierefreiheit), verlinkt in der
-Fußzeile aller Seiten und in der Sitemap. Sie ist eine **Selbsteinschätzung**, kein Prüfbericht —
-das steht auch so drin. Im Quelltext der Seite stehen drei Punkte, die vor dem Livegang mit der
-Praxis geklärt werden müssen (Zugang zu den Räumen, Ansprechpartner für Hinweise, künftige PDFs).
+**Keine eigene Erklärungsseite.** Eine Seite `barrierefreiheit.html` war kurz angelegt und wurde
+auf Wunsch von Admir (17.09.2026) wieder entfernt — es soll nur das Bedienfeld geben. Der Entwurf
+steht in der Git-Historie (Commit vom 17.09.2026) und lässt sich jederzeit zurückholen, falls der
+Kunde eine Erklärung zur Barrierefreiheit doch möchte.
+
+**Karten im Behandlerteam:** Das Raster stand auf `align-items: center`, dadurch ragte die Karte
+mit dem zusätzlichen Jameda-Link oben und unten heraus. Jetzt `align-items: stretch`, alle Karten
+einer Reihe sind gleich hoch.
 
 **Jameda:** Auf der alten Seite hing das offizielle Jameda-Siegel-Widget
 (`cdn1.jameda-elements.de/widgets/siegel/81303556_1/...`), zweimal eingebunden. Es lädt bei jedem
