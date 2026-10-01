@@ -16,7 +16,7 @@ E-Mail (beide Standorte): info@salierpraxis.de
 - Öffnungszeiten: Mo–Do 08:00–20:00, Fr 08:00–19:00, Sa 09:00–13:00
 - Seite: [Zahnarzt Düsseldorf-Oberkassel](https://www.salierpraxis.de/duesseldorf.html)
 - Einzugsgebiet: Oberkassel, Niederkassel, Heerdt, Lörick, Pempelfort, linksrheinisches Düsseldorf
-- Besonderheiten: Termine bis 20 Uhr und Samstagssprechstunde, Intraoral-Scanner für kontaktfreie Abformungen, hauseigene Zahntechnik, Lachgassedierung und Behandlung in Vollnarkose möglich
+- Besonderheiten: Termine bis 20 Uhr und Samstagssprechstunde, Intraoral-Scanner für kontaktfreie Abformungen, hauseigene Zahntechnik, Behandlung in Vollnarkose möglich
 
 ### Salierpraxis Kempen
 
@@ -40,7 +40,6 @@ E-Mail (beide Standorte): info@salierpraxis.de
 - [Parodontitisbehandlung](https://www.salierpraxis.de/leistungen/parodontitis.html) — systematische Therapie von Zahnfleisch- und Zahnbetterkrankungen mit anschließender Nachsorge.
 - [Veneers](https://www.salierpraxis.de/leistungen/veneers.html) — hauchdünne Keramikschalen für die Frontzähne bei Verfärbungen, Lücken oder abgebrochenen Kanten.
 - [Bleaching](https://www.salierpraxis.de/leistungen/bleaching.html) — Zahnaufhellung mit passgenauen Schienen unter zahnärztlicher Begleitung.
-- [Lachgassedierung](https://www.salierpraxis.de/leistungen/lachgassedierung.html) — Entspannung während der Behandlung bei Angst oder starkem Würgereiz; Patienten bleiben ansprechbar.
 - [Behandlung in Vollnarkose](https://www.salierpraxis.de/leistungen/vollnarkose.html) — umfangreiche Sanierungen in einer Sitzung, begleitet von einem Anästhesisten.
 - [Pinhole Surgical Technique](https://www.salierpraxis.de/leistungen/pinhole.html) — minimalinvasive Korrektur zurückgegangenen Zahnfleischs ohne Skalpell und Naht.
 - [Kiefergelenkstherapie](https://www.salierpraxis.de/leistungen/kiefergelenkstherapie.html) — Diagnostik und Schienentherapie bei Knirschen, Kieferschmerzen und Verspannungen.

@@ -535,3 +535,10 @@ footer a:hover { color: #4a7fa5; }
 @media (max-width: 768px) {
   .vorteile-grid .vkarte:last-child:nth-child(odd) { grid-column: auto; }
 }
+
+/* ---------- Leistungsübersicht: Termin-Kachel (12. Kachel, keine Leistung) ---------- */
+.cards-grid .item.termin { background: #eef3f6; border-color: #cfdbe3; }
+.cards-grid .item.termin .inner { display: flex; flex-direction: column; justify-content: center; flex: 1; padding: 34px 28px; }
+.cards-grid .item.termin .num { color: #4a7fa5; }
+.cards-grid .item.termin p { margin-bottom: 22px; }
+.cards-grid .item.termin .btn { align-self: flex-start; }

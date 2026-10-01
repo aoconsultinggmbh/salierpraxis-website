@@ -568,3 +568,20 @@ Kein externes Laden, kein Datenschutz-Absatz nötig. Entscheidung Admir, 17.09.2
 
 **Offen:** Haben Dr. Patrick Ilbag und Oliver Brux ebenfalls Jameda-Profile? Dann dort genauso
 verlinken. Und: sollen zusätzlich die Google-Bewertungen der beiden Standorte gezeigt werden?
+
+## Nachtrag 1. Oktober 2026: Lachgas entfernt, Teamfotos korrigiert
+
+Auf Wunsch der Praxis (Patrick Ilbag, WhatsApp 1.10.2026) wird Lachgassedierung ab
+Januar 2027 nicht mehr angeboten. Die Unterseite `leistungen/lachgassedierung.html`
+und das Bild `bilder/d248.jpg` sind aus dem Projekt entfernt, alle Erwähnungen
+(Startseite, Leistungsübersicht, Standortseiten, Nebensätze auf Implantologie,
+Pinhole, Füllungen, Vollnarkose, Endodontie, JSON-LD, Sitemap, `llms.txt`) sind
+bereinigt. Die alten `.php`-Adressen leiten jetzt auf `leistungen.html`. Die
+Übersicht hat 11 Leistungen plus eine Termin-Kachel, damit das Raster aufgeht.
+Alle Stellen oben in diesem Dokument, die noch von „zwölf Leistungen" oder Lachgas
+sprechen, beschreiben den Stand vor diesem Datum.
+
+Außerdem: Die Fotos von Dr. Patrick Ilbag und Dr. Alexander Ilbag waren vertauscht
+und sind getauscht. Oliver Brux hat ein neues Foto geliefert
+(`bilder/zahnarzt-oliver-brux.jpg/.webp`); das alte Bild ist auf seinen
+ausdrücklichen Wunsch entfernt und darf nicht wieder verwendet werden.

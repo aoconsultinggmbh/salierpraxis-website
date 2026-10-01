@@ -107,13 +107,14 @@ Redirect 301 /leistungen_fuellungen.php            /leistungen/fuellungen.html
 Redirect 301 /leistungen_endodontie.php            /leistungen/endodontie.html
 Redirect 301 /leistungen_veneers.php               /leistungen/veneers.html
 Redirect 301 /leistungen_bleaching.php             /leistungen/bleaching.html
-Redirect 301 /leistungen_lachgassedierung.php      /leistungen/lachgassedierung.html
+Redirect 301 /leistungen_lachgassedierung.php      /leistungen.html
 Redirect 301 /leistungen_vollnarkose.php           /leistungen/vollnarkose.html
 Redirect 301 /leistungen_pinhole.php               /leistungen/pinhole.html
 Redirect 301 /leistungen_kiefergelenkstherapie.php /leistungen/kiefergelenkstherapie.html
 
 # Häufige Kurz- und Alternativschreibweisen der alten Seiten
-Redirect 301 /leistungen_lachgas.php        /leistungen/lachgassedierung.html
+# (Lachgas wird seit Oktober 2026 nicht mehr angeboten, alte Adressen führen zur Leistungsübersicht)
+Redirect 301 /leistungen_lachgas.php        /leistungen.html
 Redirect 301 /leistungen_kiefergelenk.php   /leistungen/kiefergelenkstherapie.html
 Redirect 301 /leistungen_wurzelbehandlung.php /leistungen/endodontie.html
 Redirect 301 /leistungen_zahnreinigung.php  /leistungen/prophylaxe.html
