@@ -16,14 +16,14 @@ E-Mail (beide Standorte): info@salierpraxis.de
 - Öffnungszeiten: Mo–Do 08:00–20:00, Fr 08:00–19:00, Sa 09:00–13:00
 - Seite: [Zahnarzt Düsseldorf-Oberkassel](https://www.salierpraxis.de/duesseldorf.html)
 - Einzugsgebiet: Oberkassel, Niederkassel, Heerdt, Lörick, Pempelfort, linksrheinisches Düsseldorf
-- Besonderheiten: Termine bis 20 Uhr und Samstagssprechstunde, Intraoral-Scanner für kontaktfreie Abformungen, hauseigene Zahntechnik, Behandlung in Vollnarkose möglich
+- Besonderheiten: Termine bis 20 Uhr und Samstagssprechstunde, Intraoral-Scanner für digitale Abformungen ohne Abformmasse, hauseigene Zahntechnik, Behandlung in Vollnarkose möglich
 
 ### Salierpraxis Kempen
 
 - Adresse: Oelstraße 6, 47906 Kempen
 - Telefon: 02152 51 01 46 (international +49 2152 510146)
 - E-Mail: info@salierpraxis.de
-- Öffnungszeiten: Mo–Fr 08:00–18:00
+- Öffnungszeiten: Mo, Di, Do 08:00–17:00; Mi, Fr 08:00–14:00
 - Seite: [Zahnarzt Kempen](https://www.salierpraxis.de/kempen.html)
 - Einzugsgebiet: Kempen, St. Hubert, Tönisvorst, Grefrath, Willich, Krefelder Umland, Niederrhein
 - Besonderheiten: Schwerpunkt Kinderzahnheilkunde (Dr. Marthe Blecher)
@@ -34,7 +34,7 @@ E-Mail (beide Standorte): info@salierpraxis.de
 
 - [Prophylaxe und professionelle Zahnreinigung](https://www.salierpraxis.de/leistungen/prophylaxe.html) — Entfernung harter und weicher Beläge samt Politur und Fluoridierung; beugt Karies und Parodontitis vor.
 - [Implantologie](https://www.salierpraxis.de/leistungen/implantologie.html) — Zahnimplantate als künstliche Zahnwurzeln für einzelne Lücken, größere Versorgungen oder festen Prothesenhalt.
-- [Zahnersatz](https://www.salierpraxis.de/leistungen/zahnersatz.html) — Kronen, Brücken, Teil- und Vollprothesen sowie implantatgetragene Lösungen, auf Wunsch digital abgeformt.
+- [Zahnersatz](https://www.salierpraxis.de/leistungen/zahnersatz.html) — Kronen, Brücken, Teil- und Vollprothesen sowie implantatgetragene Lösungen, digital per Intraoral-Scanner abgeformt.
 - [Füllungen](https://www.salierpraxis.de/leistungen/fuellungen.html) — Kariesbehandlung mit Kassenfüllung, zahnfarbenem Komposit oder laborgefertigtem Inlay.
 - [Endodontie (Wurzelbehandlung)](https://www.salierpraxis.de/leistungen/endodontie.html) — Erhalt von Zähnen mit entzündetem oder abgestorbenem Zahnnerv statt Zahnentfernung.
 - [Parodontitisbehandlung](https://www.salierpraxis.de/leistungen/parodontitis.html) — systematische Therapie von Zahnfleisch- und Zahnbetterkrankungen mit anschließender Nachsorge.
@@ -49,8 +49,8 @@ Kinderzahnheilkunde ist als Schwerpunkt am Standort Kempen angesiedelt und hat k
 ## Team
 
 - Dr. med. dent. Patrick Ilbag — Zahnarzt; Schwerpunkte Implantologie und Prothetik
-- Dr. med. dent. Alexander Ilbag M.Sc. — Zahnarzt; Schwerpunkte Implantologie und Parodontologie, ästhetische Zahnmedizin, Sportzahnmedizin; zertifizierter Anwender der Pinhole-Technik
-- Oliver Brux — Zahnarzt; Schwerpunkt Prothetik
+- Dr. med. dent. Alexander Ilbag M.Sc. — Zahnarzt; Schwerpunkte Implantologie und Parodontologie, Prothetik, ästhetische Zahnmedizin, Sportzahnmedizin; zertifizierter Anwender der Pinhole-Technik
+- Oliver Brux — Zahnarzt; Schwerpunkte Prothetik, Parodontologie, ästhetische Zahnmedizin
 - Shirley Hendricks — Zahnärztin; Schwerpunkte Endodontologie und Kieferorthopädie
 - Dr. Marthe Blecher — Zahnärztin; Schwerpunkt Kinderzahnheilkunde, Standort Kempen
 

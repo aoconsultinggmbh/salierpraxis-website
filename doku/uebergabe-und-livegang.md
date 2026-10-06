@@ -585,3 +585,32 @@ Außerdem: Die Fotos von Dr. Patrick Ilbag und Dr. Alexander Ilbag waren vertaus
 und sind getauscht. Oliver Brux hat ein neues Foto geliefert
 (`bilder/zahnarzt-oliver-brux.jpg/.webp`); das alte Bild ist auf seinen
 ausdrücklichen Wunsch entfernt und darf nicht wieder verwendet werden.
+
+## Nachtrag 6. Oktober 2026: Rückmeldung von Dr. Alexander Ilbag (WhatsApp)
+
+Umgesetzt von Awan Tofik auf Wunsch der Praxis (Dr. Alexander Ilbag, WhatsApp 6.10.2026):
+
+- Schwerpunkte: Dr. Alexander Ilbag zusätzlich Prothetik; Oliver Brux zusätzlich
+  Parodontologie und ästhetische Zahnmedizin. Geändert auf Startseite, Standortseite
+  Düsseldorf, JSON-LD und `llms.txt`.
+- Öffnungszeiten Kempen: Mo, Di, Do 8–17 Uhr, Mi, Fr 8–14 Uhr (vorher Mo–Fr 8–18 Uhr).
+  Überall nachgezogen: Startseite, Fußzeile aller Seiten, Kontakt, Notdienst,
+  Standortseite Kempen (Tabelle und Meta-Beschreibung), JSON-LD aller Seiten, `llms.txt`.
+- Parodontitis-Seite: neuer Absatz zum Zusammenhang mit Allgemeinerkrankungen
+  (Herz-Kreislauf, Diabetes, Rheuma) und zur vorbeugenden Wirkung der Behandlung.
+  Bewusst als „Zusammenhang" und „kann begünstigen" formuliert, kein Heilversprechen.
+- Kasten „Moderne Technik" (Intraoral-Scanner) auf der Startseite entfernt. Der Scanner
+  wird stattdessen auf der Zahnersatz-Seite hervorgehoben.
+- Keramik-Implantate werden nicht angeboten: Satz im Text und Kasten „Material" auf der
+  Implantologie-Seite entsprechend geändert.
+- Zahnersatz: prothetische Planung als Schwerpunkt von Oliver Brux, Dr. Patrick Ilbag
+  und Dr. Alexander Ilbag.
+- Abformung: Der Intraoral-Scanner ist Standard, nicht „auf Wunsch", und er ist nicht
+  „kontaktfrei" (die Kamera muss in den Mund). Formulierung jetzt überall: digital per
+  Scanner, ohne Abformmasse. Auch bei Veneers, Bleaching und Schienen steht jetzt der Scan.
+- Farben: Die bläulichen Töne (Akzent `#4a7fa5`, Navy `#24343f` und die blaustichigen
+  Grautöne) sind zu neutralen Grautönen geworden, passend zu Logo und Einrichtung.
+  Kleine Überschriften und Links `#666d73` (Kontrast 5:1 auf Weiß), Schmucklinien
+  `#c4c9cd`, Knöpfe `#3a3f44`, dunkle Flächen `#2c3136`. Der Knopf im dunklen
+  Termin-Banner ist jetzt weiß mit dunkler Schrift. Das Barrierefreiheits-Widget und das
+  Einwilligungsfenster übernehmen die neuen Werte über die Variablen in `:root`.
