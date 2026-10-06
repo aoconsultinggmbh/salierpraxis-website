@@ -598,7 +598,7 @@ Umgesetzt von Awan Tofik auf Wunsch der Praxis (Dr. Alexander Ilbag, WhatsApp 6.
   Standortseite Kempen (Tabelle und Meta-Beschreibung), JSON-LD aller Seiten, `llms.txt`.
 - Parodontitis-Seite: neuer Absatz zum Zusammenhang mit Allgemeinerkrankungen
   (Herz-Kreislauf, Diabetes, Rheuma) und zur vorbeugenden Wirkung der Behandlung.
-  Bewusst als „Zusammenhang" und „kann begünstigen" formuliert, kein Heilversprechen.
+  Auf Wunsch von Awan Tofik (6.10.2026) direkt formuliert: Parodontitis kann die Ursache vieler Allgemeinerkrankungen sein, die Behandlung wirkt heilend und vorbeugend.
 - Kasten „Moderne Technik" (Intraoral-Scanner) auf der Startseite entfernt. Der Scanner
   wird stattdessen auf der Zahnersatz-Seite hervorgehoben.
 - Keramik-Implantate werden nicht angeboten: Satz im Text und Kasten „Material" auf der
