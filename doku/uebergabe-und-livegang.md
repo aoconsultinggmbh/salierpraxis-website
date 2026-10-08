@@ -633,8 +633,9 @@ Umgesetzt von Awan Tofik:
 - Fotos: Die Mitarbeiterin auf `k154.jpg` (links, rotes Oberteil) ist nicht mehr in der Praxis.
   `k154.jpg` ist überall ersetzt durch `k238.jpg` (Startseiten-Karte Kempen, Kopfbild und
   Social-Vorschau der Kempen-Seite); das Team-Bild der Kempen-Seite ist jetzt `k113.jpg`.
-  Auf `k198.jpg` (Assistenz neben Dr. Alexander Ilbag) ist sehr wahrscheinlich dieselbe Person;
-  deshalb ebenfalls ersetzt, Füllungen zeigt jetzt überall `k1.jpg`. Die beiden Dateien bleiben
-  im Projekt, werden aber nirgends mehr eingebunden. **Bestätigung der Praxis zu `k198` steht aus.**
+  Auf `k198.jpg` (Assistenz neben Dr. Alexander Ilbag, mit Maske, von der Seite) ist laut Awan
+  dieselbe Person; das Bild bleibt trotzdem drin, weil sie darauf nicht erkennbar ist
+  (Entscheidung Awan, 8.10.2026). `k154.jpg` liegt noch im Ordner `bilder/`, ist aber nirgends
+  mehr eingebunden.
 - Team-Listen (Düsseldorf und Kempen) laufen jetzt zweispaltig sauber um, wenn ein Schwerpunkt
   länger ist.
