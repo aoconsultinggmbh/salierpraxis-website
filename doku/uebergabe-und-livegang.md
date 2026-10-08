@@ -614,3 +614,27 @@ Umgesetzt von Awan Tofik auf Wunsch der Praxis (Dr. Alexander Ilbag, WhatsApp 6.
   `#c4c9cd`, Knöpfe `#3a3f44`, dunkle Flächen `#2c3136`. Der Knopf im dunklen
   Termin-Banner ist jetzt weiß mit dunkler Schrift. Das Barrierefreiheits-Widget und das
   Einwilligungsfenster übernehmen die neuen Werte über die Variablen in `:root`.
+
+## Nachtrag 8. Oktober 2026: zweite Rückmeldung (Dr. Alexander Ilbag, Dr. Patrick Ilbag, WhatsApp 7.10.2026)
+
+Umgesetzt von Awan Tofik:
+
+- Schwerpunkte: Shirley Hendricks jetzt „Endodontologie & Aligner-Behandlung" (Kieferorthopädie
+  entfernt), Dr. Alexander Ilbag zusätzlich „Aligner-Behandlung". Startseite, Standortseite
+  Düsseldorf, JSON-LD, `llms.txt`.
+- Team Kempen: Die Zeile „Zahnärzteteam der Salierpraxis" ist ersetzt durch Dr. Patrick Ilbag und
+  Dr. Alexander Ilbag mit Schwerpunkten. Hinweis im Text, dass beide an beiden Standorten behandeln.
+- Menüpunkt „Team" auf allen Seiten (nach „Leistungen"), springt sanft zum Behandlerteam auf der
+  Startseite (`index.html#team`). Dafür den Kopfbereich enger gesetzt: kompakte Navigation jetzt
+  bis 1320 px, Knopf im Kopf bis 1040 px ausgeblendet. Alle Breiten von 769 bis 1500 px geprüft,
+  nichts scrollt seitlich.
+- Öffnungszeiten Düsseldorf: Mo–Do 8–19 Uhr, Fr 8–15 Uhr, Sa 9–13 Uhr. Überall nachgezogen,
+  auch „Termine bis 19 Uhr" in Meta-Beschreibung, Einleitung der Standortseite und `llms.txt`.
+- Fotos: Die Mitarbeiterin auf `k154.jpg` (links, rotes Oberteil) ist nicht mehr in der Praxis.
+  `k154.jpg` ist überall ersetzt durch `k238.jpg` (Startseiten-Karte Kempen, Kopfbild und
+  Social-Vorschau der Kempen-Seite); das Team-Bild der Kempen-Seite ist jetzt `k113.jpg`.
+  Auf `k198.jpg` (Assistenz neben Dr. Alexander Ilbag) ist sehr wahrscheinlich dieselbe Person;
+  deshalb ebenfalls ersetzt, Füllungen zeigt jetzt überall `k1.jpg`. Die beiden Dateien bleiben
+  im Projekt, werden aber nirgends mehr eingebunden. **Bestätigung der Praxis zu `k198` steht aus.**
+- Team-Listen (Düsseldorf und Kempen) laufen jetzt zweispaltig sauber um, wenn ein Schwerpunkt
+  länger ist.
