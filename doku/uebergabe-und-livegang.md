@@ -639,3 +639,5 @@ Umgesetzt von Awan Tofik:
   mehr eingebunden.
 - Team-Listen (Düsseldorf und Kempen) laufen jetzt zweispaltig sauber um, wenn ein Schwerpunkt
   länger ist.
+
+Nachtrag 8.10.2026 (zweite Runde, Ergänzung): Auf Wunsch von Dr. Alexander Ilbag heißt es überall einheitlich „Dr. med. dent. Marthe Blecher".
