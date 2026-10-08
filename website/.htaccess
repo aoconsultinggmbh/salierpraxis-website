@@ -41,16 +41,91 @@
   RewriteCond %{HTTP_HOST} \.kasserver\.com$ [NC]
   RewriteRule ^ - [L]
 
-  RewriteCond %{HTTPS} !=on
-  RewriteCond %{HTTP:X-Forwarded-Proto} !https
-  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+  # --- Alte Joomla-Adressen der Vorgaengerseite (ausgelesen am 08.10.2026) ---
+  # Die alte Seite lief unter index.php?option=...&Itemid=... . Jede Adresse
+  # zeigt dauerhaft (301) auf ihr neues Gegenstueck, die Parameter fallen weg (QSD).
+  # Zuerst die Behandler-Artikel (die haben Itemid 101 und wuerden sonst auf die
+  # Startseite statt zum Team gehen), danach die Menuepunkte.
+  RewriteCond %{QUERY_STRING} option=com_content [NC]
+  RewriteCond %{QUERY_STRING} (^|[&;])id=14(&|$) [NC]
+  RewriteRule ^(index\.php)?$ https://www.salierpraxis.de/impressum.html [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} option=com_content [NC]
+  RewriteCond %{QUERY_STRING} (^|[&;])id=15(&|$) [NC]
+  RewriteRule ^(index\.php)?$ https://www.salierpraxis.de/datenschutz.html [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} option=com_content [NC]
+  RewriteCond %{QUERY_STRING} (^|[&;])id=19(&|$) [NC]
+  RewriteRule ^(index\.php)?$ https://www.salierpraxis.de/#team [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} option=com_content [NC]
+  RewriteCond %{QUERY_STRING} (^|[&;])id=20(&|$) [NC]
+  RewriteRule ^(index\.php)?$ https://www.salierpraxis.de/#team [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} option=com_content [NC]
+  RewriteCond %{QUERY_STRING} (^|[&;])id=21(&|$) [NC]
+  RewriteRule ^(index\.php)?$ https://www.salierpraxis.de/#team [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} option=com_content [NC]
+  RewriteCond %{QUERY_STRING} (^|[&;])id=125(&|$) [NC]
+  RewriteRule ^(index\.php)?$ https://www.salierpraxis.de/#team [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} option=com_content [NC]
+  RewriteCond %{QUERY_STRING} (^|[&;])id=126(&|$) [NC]
+  RewriteRule ^(index\.php)?$ https://www.salierpraxis.de/#team [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (^|[&;])Itemid=101(&|$) [NC]
+  RewriteRule ^(index\.php)?$ https://www.salierpraxis.de/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (^|[&;])Itemid=103(&|$) [NC]
+  RewriteRule ^(index\.php)?$ https://www.salierpraxis.de/leistungen.html [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (^|[&;])Itemid=104(&|$) [NC]
+  RewriteRule ^(index\.php)?$ https://www.salierpraxis.de/duesseldorf.html [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (^|[&;])Itemid=105(&|$) [NC]
+  RewriteRule ^(index\.php)?$ https://www.salierpraxis.de/kempen.html [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (^|[&;])Itemid=111(&|$) [NC]
+  RewriteRule ^(index\.php)?$ https://www.salierpraxis.de/impressum.html [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (^|[&;])Itemid=112(&|$) [NC]
+  RewriteRule ^(index\.php)?$ https://www.salierpraxis.de/datenschutz.html [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (^|[&;])Itemid=113(&|$) [NC]
+  RewriteRule ^(index\.php)?$ https://www.salierpraxis.de/leistungen.html [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (^|[&;])Itemid=189(&|$) [NC]
+  RewriteRule ^(index\.php)?$ https://www.salierpraxis.de/leistungen/pinhole.html [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (^|[&;])Itemid=190(&|$) [NC]
+  RewriteRule ^(index\.php)?$ https://www.salierpraxis.de/leistungen.html [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (^|[&;])Itemid=191(&|$) [NC]
+  RewriteRule ^(index\.php)?$ https://www.salierpraxis.de/leistungen.html [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (^|[&;])Itemid=192(&|$) [NC]
+  RewriteRule ^(index\.php)?$ https://www.salierpraxis.de/leistungen/vollnarkose.html [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (^|[&;])Itemid=193(&|$) [NC]
+  RewriteRule ^(index\.php)?$ https://www.salierpraxis.de/leistungen/implantologie.html [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (^|[&;])Itemid=194(&|$) [NC]
+  RewriteRule ^(index\.php)?$ https://www.salierpraxis.de/leistungen/zahnersatz.html [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (^|[&;])Itemid=195(&|$) [NC]
+  RewriteRule ^(index\.php)?$ https://www.salierpraxis.de/leistungen/fuellungen.html [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (^|[&;])Itemid=196(&|$) [NC]
+  RewriteRule ^(index\.php)?$ https://www.salierpraxis.de/leistungen/endodontie.html [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (^|[&;])Itemid=197(&|$) [NC]
+  RewriteRule ^(index\.php)?$ https://www.salierpraxis.de/leistungen/parodontitis.html [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (^|[&;])Itemid=198(&|$) [NC]
+  RewriteRule ^(index\.php)?$ https://www.salierpraxis.de/leistungen/kiefergelenkstherapie.html [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (^|[&;])Itemid=199(&|$) [NC]
+  RewriteRule ^(index\.php)?$ https://www.salierpraxis.de/leistungen/prophylaxe.html [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (^|[&;])Itemid=200(&|$) [NC]
+  RewriteRule ^(index\.php)?$ https://www.salierpraxis.de/leistungen/veneers.html [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (^|[&;])Itemid=201(&|$) [NC]
+  RewriteRule ^(index\.php)?$ https://www.salierpraxis.de/leistungen/bleaching.html [R=301,L,QSD,NE]
+  # Alles andere aus Joomla (index.php?option=...) auf die Startseite.
+  RewriteCond %{QUERY_STRING} (^|[&;])option=com_ [NC]
+  RewriteRule ^(index\.php)?$ https://www.salierpraxis.de/ [R=301,L,QSD]
+
+  # --- Immer https und immer www (eine einzige Adresse fuer Google) ---
+  RewriteCond %{HTTPS} !=on [OR]
+  RewriteCond %{HTTP_HOST} !^www\. [NC]
+  RewriteRule ^(.*)$ https://www.salierpraxis.de/$1 [R=301,L]
 </IfModule>
 
 
 # ---------------------------------------------------------------------------
 # 2. Domain-/www-Vereinheitlichung
 #
-# ===== ERST NACH DER DOMAIN-ENTSCHEIDUNG AKTIVIEREN =====
+# Stand Livegang 08.10.2026: salierpraxis.de ist die Hauptdomain, https und www
+# werden oben in Abschnitt 1 erzwungen. Offen ist nur noch die Zweitdomain
+# salierpraxis-duesseldorf.de: sie liegt bei einem anderen Anbieter und zeigt
+# noch nicht auf diesen Webspace. Erst wenn sie hier eingerichtet ist, Block 2a
+# einkommentieren.
 #
 # Ausgangslage: salierpraxis.de und salierpraxis-duesseldorf.de führen bisher
 # teils unterschiedliche Inhalte. Empfehlung: salierpraxis.de als einzige
@@ -147,15 +222,7 @@ Redirect 301 /startseite.php   /
   RedirectMatch 301 ^/leistungen_[a-z0-9_-]+\.php$  /leistungen.html
 </IfModule>
 
-# --- Joomla-Altlasten ------------------------------------------------------
-# Typische Joomla-Adressen mit Parametern (index.php?option=...) lassen sich
-# per Redirect nicht sauber abbilden; sie landen auf der Startseite.
-# Bei Bedarf nach Auswertung der Search Console gezielt ergänzen.
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteCond %{QUERY_STRING} (^|&)option=com_ [NC]
-  RewriteRule ^index\.php$ / [R=301,L]
-</IfModule>
+# --- Joomla-Altlasten: siehe Abschnitt 1 (genaue Zuordnung je Menuepunkt) ---
 
 
 # ---------------------------------------------------------------------------
@@ -218,10 +285,10 @@ ErrorDocument 404 /404.html
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
   <FilesMatch "\.(css|js)$">
-    Header set Cache-Control "public, max-age=2592000"
+    Header set Cache-Control "public, max-age=86400"
   </FilesMatch>
-  # HTML und Textdateien: kurz gültig
-  <FilesMatch "\.(html|txt|xml|json)$">
+  # Textdateien: kurz gültig (HTML siehe ganz unten: nie zwischenspeichern)
+  <FilesMatch "\.(txt|xml|json)$">
     Header set Cache-Control "public, max-age=3600, must-revalidate"
   </FilesMatch>
 </IfModule>

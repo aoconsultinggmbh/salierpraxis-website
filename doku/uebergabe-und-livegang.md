@@ -641,3 +641,21 @@ Umgesetzt von Awan Tofik:
   länger ist.
 
 Nachtrag 8.10.2026 (zweite Runde, Ergänzung): Auf Wunsch von Dr. Alexander Ilbag heißt es überall einheitlich „Dr. med. dent. Marthe Blecher".
+
+## Livegang-Vorbereitung 8. Oktober 2026 (Awan Tofik)
+
+- DNS gemessen: Domain `salierpraxis.de` mit Namensservern bei GoDaddy (domaincontrol.com,
+  also Host Europe), Webseite auf `wp589.webpack.hosteurope.de` (5.175.14.111, dazu AAAA),
+  Post über `mx0.salierpraxis.de` (80.237.138.5). `mail.` und `webmail.salierpraxis.de`
+  zeigen auf 5.175.14.111 und **bleiben unverändert**. SPF: `v=spf1 a mx include:spf.server-he.de -all`.
+  Zweitdomain `salierpraxis-duesseldorf.de` liegt bei einem anderen Anbieter (ns14.net)
+  und ist nicht Teil dieses Umzugs.
+- Kontaktformular scharf: `anfrage-senden.php` (Empfänger und Absender info@salierpraxis.de),
+  `js/formular.js`, Honigtopf, Zeitsperre 3 s, Pflichtfelder an drei Stellen geprüft.
+- Datenschutz: Hoster ALL-INKL.COM eingetragen, Abschnitt Kontaktformular konkret.
+- `.htaccess`: https und www erzwungen; alte Joomla-Adressen der Vorgängerseite einzeln
+  zugeordnet (am 08.10. von der alten Seite ausgelesen, Itemid 101 bis 201 und die
+  Behandler-Artikel); HTML nie zwischenspeichern, CSS und JS einen Tag.
+  Lokal mit Apache 2.4 getestet.
+- Offen vom Kunden: Aufsichtsbehörde und USt-IdNr. im Impressum bestätigen,
+  Notdienstnummer 01805 986700 bestätigen (Awan fragt nach).

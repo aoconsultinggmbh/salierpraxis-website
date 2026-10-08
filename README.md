@@ -34,10 +34,8 @@ Nichts geht ohne Freigabe live.
 
 ## Vor dem Livegang zu erledigen
 
-- **Kontaktformular verschickt noch nichts** (`action="#"`, `onsubmit="return false"`).
-  Für den Versand kommt ein PHP-Skript beim Hoster dazu, plus Honeypot gegen Spam.
-  Empfängeradresse mit der Praxis abstimmen. Bei Gesundheitsdaten im Freitextfeld
-  auf Verschlüsselung und Hinweistext achten.
+- ~~Kontaktformular~~ erledigt 08.10.2026: `anfrage-senden.php` an info@salierpraxis.de,
+  Honigtopf, Zeitsperre, Rückfall aufs Mailprogramm (`js/formular.js`).
 - Offene **[PRÜFEN]-Punkte** aus der Übergabe abklären (Online-Terminbuchung,
   Notdienstnummer, Aufsichtsbehörde im Impressum juristisch bestätigen) –
   Liste in `doku/uebergabe-und-livegang.md`, Abschnitt A.2.

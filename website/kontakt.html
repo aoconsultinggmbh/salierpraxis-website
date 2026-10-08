@@ -84,14 +84,9 @@
   <div class="two">
     <div class="main">
       <h2>Schreiben Sie <b>uns</b></h2>
-      <!--
-        HINWEIS FÜR DEN LIVEGANG:
-        Dieses Formular ist eine Attrappe und wird bei Livegang angebunden
-        (Server-seitiger Versand, z. B. per PHP-Mailer oder Formulardienst).
-        Vorgesehen: SSL-verschlüsselte Übertragung und unsichtbarer Spamschutz
-        (Honeypot) statt CAPTCHA. Bis dahin ist der Absenden-Button ohne Funktion.
-      -->
-      <form action="#" method="post" onsubmit="return false;">
+      <form id="kontaktformular" action="anfrage-senden.php" method="post" novalidate>
+        <div class="hp" aria-hidden="true"><label for="f-website">Bitte leer lassen</label><input type="text" id="f-website" name="website" tabindex="-1" autocomplete="off"></div>
+        <input type="hidden" name="zeit" value="">
         <div class="form-grid">
           <div class="field"><label for="f-nachname">Nachname *</label><input type="text" id="f-nachname" name="nachname" required autocomplete="family-name"></div>
           <div class="field"><label for="f-vorname">Vorname *</label><input type="text" id="f-vorname" name="vorname" required autocomplete="given-name"></div>
@@ -105,6 +100,7 @@
             <label for="f-datenschutz" style="text-transform:none; letter-spacing:0; font-weight:400; font-size:14px;">Ich habe die <a href="datenschutz.html" style="color:#666d73;">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Beantwortung meiner Anfrage zu. *</label>
           </div>
           <div class="full"><button type="submit" class="btn btn-solid">Nachricht senden</button></div>
+          <p class="full formular-status" id="formular-status" role="status" aria-live="polite" hidden></p>
         </div>
       </form>
       <p class="form-note">* Pflichtfelder. Bitte beachten Sie: Terminvereinbarungen und akute Notfälle nehmen wir am schnellsten telefonisch entgegen. Übermitteln Sie über das Formular keine sensiblen Gesundheitsdaten.</p>
@@ -161,6 +157,7 @@
 </div></footer>
 
 <script src="js/main.js"></script>
+<script src="js/formular.js"></script>
 <script src="js/barrierefreiheit.js" defer></script>
 <script src="js/statistik.js" defer></script>
 <script type="application/ld+json">
